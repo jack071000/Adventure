@@ -22,15 +22,15 @@
     <Filter Include="FrameWork\SceneDirector">
       <UniqueIdentifier>{c2dc1a49-a971-4638-a95b-119b1eb5345a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FrameWork\GameTime">
+      <UniqueIdentifier>{5396b34a-d9ab-4fe7-bc9f-0caab50cec9c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>stdafx</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Application.cpp">
-      <Filter>FrameWork\Application</Filter>
-    </ClCompile>
     <ClCompile Include="Renderer2D.cpp">
       <Filter>FrameWork\Renderer</Filter>
     </ClCompile>
@@ -46,7 +46,12 @@
     <ClCompile Include="GameObject.cpp">
       <Filter>FrameWork\Node</Filter>
     </ClCompile>
-    <ClCompile Include="GameTime.cpp" />
+    <ClCompile Include="GameTime.cpp">
+      <Filter>FrameWork\GameTime</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>FrameWork\Application</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -73,6 +78,8 @@
     <ClInclude Include="GameObject.h">
       <Filter>FrameWork\Node</Filter>
     </ClInclude>
-    <ClInclude Include="GameTime.h" />
+    <ClInclude Include="GameTime.h">
+      <Filter>FrameWork\GameTime</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

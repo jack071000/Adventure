@@ -42,7 +42,7 @@ bool Application::_CreateWindow(std::wstring title, int width, int height, bool 
 	else
 		style = WS_EX_TOPMOST | WS_POPUP;
 
-	m_handle = CreateWindow(title.c_str(), title.c_str(), style, 0, 0, width, height, NULL, NULL, wc.hInstance, NULL);
+	m_handle = CreateWindow(wc.lpszClassName, title.c_str(), style, 0, 0, width, height, NULL, NULL, wc.hInstance, NULL);
 
 	if (m_handle == NULL)
 		return 0;
@@ -53,6 +53,7 @@ bool Application::_CreateWindow(std::wstring title, int width, int height, bool 
 bool Application::_Create2DRenderer()
 {
 	Singleton<Renderer2D>::GetInstance()->Init(m_handle, Width, Height, windowMode);
+	return true;
 }
 
 bool Application::Run()
@@ -87,7 +88,6 @@ bool Application::Run()
 
 			if (GameTime::CurrentFrame > 60)
 				GameTime::CurrentFrame = 0;
-
 
 		}
 

@@ -7,8 +7,10 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 	//_CrtSetBreakAlloc( );
 
 #endif
-	Singleton<Application>::GetInstance()->Init(L"Adventure", 1280, 720, 0);
+	Application* App = Singleton<Application>::GetInstance();
 
-
+	App->Init(L"Adventure", 1280, 720, 1);
+	App->Run();
+	
 
 }

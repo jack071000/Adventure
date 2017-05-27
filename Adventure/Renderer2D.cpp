@@ -28,7 +28,7 @@ bool Renderer2D::Init(HWND handle, int width, int height, bool windowmode)
 	pp.Windowed = windowmode;
 
 	HRESULT hr;
-	hr = Direct3D->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, m_handle,
+	hr = Direct3D->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, handle,
 		D3DCREATE_SOFTWARE_VERTEXPROCESSING, &pp, &Device);
 
 	if FAILED(hr)
