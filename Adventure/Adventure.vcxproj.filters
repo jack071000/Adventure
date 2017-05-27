@@ -46,6 +46,7 @@
     <ClCompile Include="GameObject.cpp">
       <Filter>FrameWork\Node</Filter>
     </ClCompile>
+    <ClCompile Include="GameTime.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -72,5 +73,6 @@
     <ClInclude Include="GameObject.h">
       <Filter>FrameWork\Node</Filter>
     </ClInclude>
+    <ClInclude Include="GameTime.h" />
   </ItemGroup>
 </Project>

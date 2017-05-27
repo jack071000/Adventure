@@ -1,9 +1,11 @@
 #pragma once
 class Scene;
-class SceneDirector
+class SceneDirector : public Singleton<SceneDirector>
 {
 public:
 	Scene * CurrentScene;
+
+	friend class Singleton<SceneDirector>;
 
 public:
 	SceneDirector();

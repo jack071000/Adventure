@@ -77,7 +77,16 @@ bool Application::Run()
 		else
 		{
 			//게임 루프
+			Singleton<Renderer2D>::GetInstance()->Begin();
+			Singleton<SceneDirector>::GetInstance()->Update(16.f);
+			Singleton<SceneDirector>::GetInstance()->Render();
+			Singleton<Renderer2D>::GetInstance()->End();
 
+			GameTime::CurrentFrame++;
+			GameTime::TotalFrame++;
+
+			if (GameTime::CurrentFrame > 60)
+				GameTime::CurrentFrame = 0;
 
 
 		}

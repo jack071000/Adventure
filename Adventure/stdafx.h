@@ -28,6 +28,9 @@
 #include"Singleton.h"
 #include"Application.h"
 #include"Renderer2D.h"
+#include"SceneDirector.h"
+#include"GameTime.h"
+
 
 #include"GameObject.h"
 #include"Scene.h"
