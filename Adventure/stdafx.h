@@ -8,6 +8,11 @@
 #define WINDOW_MODE 0
 #endif
 
+#if _DEBUG
+#include<crtdbg.h>
+#define DEBUG_NEW new(_NORMAL_BLOCK, __FILE__, __LINE__)
+#endif
+
 #define SAFE_DELETE(x) if(x) {delete x; x = nullptr;}
 #define SAFE_RELEASE(x) if(x) {x->Release(); x = nullptr;}
 

@@ -25,6 +25,12 @@
     <Filter Include="FrameWork\GameTime">
       <UniqueIdentifier>{5396b34a-d9ab-4fe7-bc9f-0caab50cec9c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{ae292479-a473-4f14-ab74-504e55c9eb8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scene">
+      <UniqueIdentifier>{e6890b41-db1c-4377-a07c-6a2f3ac1e71b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -57,6 +63,12 @@
     </ClCompile>
     <ClCompile Include="Sprite.cpp">
       <Filter>FrameWork\Node</Filter>
+    </ClCompile>
+    <ClCompile Include="IntroScene.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="StartScene.cpp">
+      <Filter>Game\Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -92,6 +104,12 @@
     </ClInclude>
     <ClInclude Include="Sprite.h">
       <Filter>FrameWork\Node</Filter>
+    </ClInclude>
+    <ClInclude Include="IntroScene.h">
+      <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="StartScene.h">
+      <Filter>Game\Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

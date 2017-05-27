@@ -1,4 +1,5 @@
 #include"stdafx.h"
+#include"StartScene.h"
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 {
@@ -10,7 +11,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 	Application* App = Singleton<Application>::GetInstance();
 
 	App->Init(L"Adventure", 1280, 720, 1);
+
+	Singleton<SceneDirector>::GetInstance()->ChangeScene(new StartScene());
+
 	App->Run();
 	App->Release();
-
 }
