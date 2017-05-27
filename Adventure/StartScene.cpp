@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "StartScene.h"
-
+#include"Player.h"
 
 StartScene::StartScene()
 {
@@ -13,17 +13,10 @@ StartScene::~StartScene()
 
 bool StartScene::Init()
 {
-	printf("StartScene");
+	player = new Player();
+	player->Init();
 
-	a = new Animation();
-	a->AddFrame(L"Resources/1.png");
-	a->AddFrame(L"Resources/2.png");
-	a->AddFrame(L"Resources/3.png");
-
-	a->FrameDelay = 60;
-	
-
-	AddChild(a);
+	AddChild(player);
 
 	return true;
 }

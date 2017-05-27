@@ -43,6 +43,12 @@
     <Filter Include="Game\Monster\General">
       <UniqueIdentifier>{95a649a4-f55d-43c3-a673-835f8d43ceaa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\BackGround">
+      <UniqueIdentifier>{99e7dc12-ec56-4b1d-8c55-a07d1f3651a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\Input">
+      <UniqueIdentifier>{da6687dc-7001-4dcc-8b6a-c7cb78f94f87}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -87,6 +93,9 @@
     </ClCompile>
     <ClCompile Include="Animation.cpp">
       <Filter>FrameWork\Node</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>FrameWork\Input</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -134,6 +143,9 @@
     </ClInclude>
     <ClInclude Include="Animation.h">
       <Filter>FrameWork\Node</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>FrameWork\Input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

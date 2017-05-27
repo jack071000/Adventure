@@ -10,9 +10,11 @@ public:
 
 	D3DXVECTOR2 Position;
 	D3DXMATRIX Matrix;
+	D3DXVECTOR2 Scale;
 
 	bool visible;
 	bool UseParentMatrix;
+
 
 
 public:

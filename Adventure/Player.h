@@ -8,6 +8,10 @@ private:
 	int Attack;
 	int Energy;
 
+	Sprite* zelda;
+
+	int value;
+
 	//static Player* GetInstance();
 	//static void ReleaseInstance();
 

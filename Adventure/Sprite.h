@@ -7,6 +7,10 @@ public:
 
 	D3DXVECTOR3 Center;
 
+	RECT m_Rect;
+
+	bool Setrect;
+
 public:
 	Sprite();
 	virtual ~Sprite();

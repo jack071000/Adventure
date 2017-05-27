@@ -36,6 +36,8 @@
 #include"SceneDirector.h"
 #include"GameTime.h"
 #include"ResourceMgr.h"
+#include"Input.h"
+
 
 #include"GameObject.h"
 #include"Scene.h"

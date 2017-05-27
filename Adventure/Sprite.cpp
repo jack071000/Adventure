@@ -2,7 +2,7 @@
 #include "Sprite.h"
 
 
-Sprite::Sprite()
+Sprite::Sprite() : Setrect(false)
 {
 }
 
@@ -51,11 +51,15 @@ void Sprite::Render()
 	GameObject::Render();
 
 	RECT srcRect;
-	SetRect(&srcRect, 0, 0, static_cast<int>(Texture->Size.x), static_cast<int>(Texture->Size.y));
+	if (Setrect == false)
+	{
+		SetRect(&srcRect, 0, 0, static_cast<int>(Texture->Size.x), static_cast<int>(Texture->Size.y));
+		m_Rect = srcRect;
+	}
 
 	D3DSprite->Begin(D3DXSPRITE_ALPHABLEND);
 	D3DSprite->SetTransform(&Matrix);
-	D3DSprite->Draw(Texture->D3DTexture, &srcRect, NULL, NULL, D3DCOLOR_ARGB(255, 255, 255, 255));
+	D3DSprite->Draw(Texture->D3DTexture, &m_Rect, NULL, NULL, D3DCOLOR_ARGB(255, 255, 255, 255));
 	D3DSprite->End();
 }
 

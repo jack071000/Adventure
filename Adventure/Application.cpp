@@ -79,6 +79,7 @@ bool Application::Run()
 		{
 			//게임 루프
 			Singleton<Renderer2D>::GetInstance()->Begin();
+			Singleton<Input>::GetInstance()->Update();
 			Singleton<SceneDirector>::GetInstance()->Update(16.f);
 			Singleton<SceneDirector>::GetInstance()->Render();
 			Singleton<Renderer2D>::GetInstance()->End();

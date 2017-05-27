@@ -1,9 +1,10 @@
 #pragma once
+class Player;
 class StartScene : public Scene
 {
 private:
-	Animation* a;
-
+	Sprite* StartSceneBackGround;
+	Player* player;
 
 public:
 	StartScene();
@@ -12,5 +13,4 @@ public:
 	bool Init();
 	void Update(float deltaTime);
 	void Render();
-
 };
