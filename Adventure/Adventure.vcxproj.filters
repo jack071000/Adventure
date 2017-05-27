@@ -1,17 +1,55 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="소스 파일">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="FrameWork">
+      <UniqueIdentifier>{f3c7c147-226b-408a-9bd6-1075f771b24a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="헤더 파일">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    <Filter Include="FrameWork\Application">
+      <UniqueIdentifier>{216e7561-67f2-43ff-beb4-a12b0632361f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="리소스 파일">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="FrameWork\Renderer">
+      <UniqueIdentifier>{60e77f10-47c7-4208-8f49-a537b58e7a2d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FrameWork\ResourceMgr">
+      <UniqueIdentifier>{6672d84e-d51a-45b3-9044-cfb7d78736bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\Node">
+      <UniqueIdentifier>{3cb5e555-537b-4b8c-8a37-54b8065fec32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stdafx">
+      <UniqueIdentifier>{c703fa7d-b190-4177-beb0-87bc711eb927}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>stdafx</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Application.cpp">
+      <Filter>FrameWork\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer2D.cpp">
+      <Filter>FrameWork\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceMgr.cpp">
+      <Filter>FrameWork\ResourceMgr</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>stdafx</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>FrameWork\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>FrameWork\Node</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer2D.h">
+      <Filter>FrameWork\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceMgr.h">
+      <Filter>FrameWork\ResourceMgr</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
