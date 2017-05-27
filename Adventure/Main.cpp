@@ -11,6 +11,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 
 	App->Init(L"Adventure", 1280, 720, 1);
 	App->Run();
-	
+	App->Release();
 
 }

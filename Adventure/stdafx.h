@@ -30,7 +30,8 @@
 #include"Renderer2D.h"
 #include"SceneDirector.h"
 #include"GameTime.h"
-
+#include"ResourceMgr.h"
 
 #include"GameObject.h"
 #include"Scene.h"
+#include"Texture.h"
