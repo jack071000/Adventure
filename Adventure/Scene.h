@@ -1,8 +1,8 @@
 #pragma once
-class Scene
+class Scene : public GameObject
 {
 public:
 	Scene();
-	~Scene();
+	virtual ~Scene();
 };
 

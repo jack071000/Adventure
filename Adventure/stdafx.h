@@ -28,3 +28,6 @@
 #include"Singleton.h"
 #include"Application.h"
 #include"Renderer2D.h"
+
+#include"GameObject.h"
+#include"Scene.h"
