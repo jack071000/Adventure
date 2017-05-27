@@ -12,7 +12,6 @@ Texture::~Texture()
 
 bool Texture::Init(std::wstring fileName)
 {
-
 	HRESULT hr;
 	hr = D3DXCreateTextureFromFileEx(
 		Singleton<Renderer2D>::GetInstance()->Device,
