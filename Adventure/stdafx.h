@@ -40,3 +40,4 @@
 #include"GameObject.h"
 #include"Scene.h"
 #include"Texture.h"
+#include"Sprite.h"

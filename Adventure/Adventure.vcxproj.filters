@@ -31,6 +31,18 @@
     <Filter Include="Game\Scene">
       <UniqueIdentifier>{e6890b41-db1c-4377-a07c-6a2f3ac1e71b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\Player">
+      <UniqueIdentifier>{aab583ad-ff38-4f1f-b22a-e31feeca1226}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Monster">
+      <UniqueIdentifier>{35587bd8-42d1-4d09-9184-d6c3cb9476b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Monster\Boss">
+      <UniqueIdentifier>{7c0f69f5-1f34-4fa6-b934-f4448906a581}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Monster\General">
+      <UniqueIdentifier>{95a649a4-f55d-43c3-a673-835f8d43ceaa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -69,6 +81,9 @@
     </ClCompile>
     <ClCompile Include="StartScene.cpp">
       <Filter>Game\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Game\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -110,6 +125,9 @@
     </ClInclude>
     <ClInclude Include="StartScene.h">
       <Filter>Game\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Game\Player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
