@@ -1,6 +1,10 @@
 #pragma once
 class StartScene : public Scene
 {
+private:
+	Animation* a;
+
+
 public:
 	StartScene();
 	~StartScene();

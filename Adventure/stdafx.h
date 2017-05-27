@@ -41,3 +41,4 @@
 #include"Scene.h"
 #include"Texture.h"
 #include"Sprite.h"
+#include"Animation.h"

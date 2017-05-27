@@ -13,10 +13,10 @@ IntroScene::~IntroScene()
 
 void IntroScene::Update(float deltaTime)
 {
-	Scene::Update(deltaTime);
+	GameObject::Update(deltaTime);
 }
 
 void IntroScene::Render()
 {
-	Scene::Render();
+	GameObject::Render();
 }
