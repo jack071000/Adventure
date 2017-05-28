@@ -33,9 +33,14 @@ bool Player::Init()
 {
 	zelda = Sprite::Create(L"Resources/Zelda.png");
 	zelda->Setrect = true;
+
+	Position.x += 500;
+	Position.y += 300;
+
 	RECT rect;
 	SetRect(&rect, 0, 0, 100, 120);
 	zelda->m_Rect = rect;
+
 	this->value = 0;
 	AddChild(zelda);
 	return true;
@@ -45,16 +50,29 @@ void Player::Update(float deltaTime)
 {
 	GameObject::Update(deltaTime);
 
-	if (GameTime::TotalFrame % 15 == 0)
+	if (Singleton<Input>::GetInstance()->GetKeyState(VK_SPACE) == KeyState::KEY_PRESS)
 	{
-		value += 115;
+		if (GameTime::TotalFrame % 3 == 0)
+		{
+			value += 115;
 
-		if (value > 575)
-			value = 575;
+			if (value > 575)
+				value = 0;
+		}
 	}
-
+	
 	RECT rect;
 	SetRect(&rect, value, 0, value+100, 120);
+
+	if (Singleton<Input>::GetInstance()->GetKeyState(VK_RIGHT) == KeyState::KEY_PRESS)
+	{
+		Position.x += 3.f;
+	}
+
+	if (Singleton<Input>::GetInstance()->GetKeyState(VK_LEFT) == KeyState::KEY_PRESS)
+	{
+		Position.x -= 3.f;
+	}
 
 	printf("VALUE : %d", value);
 
