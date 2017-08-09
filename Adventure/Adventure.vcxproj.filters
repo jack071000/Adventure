@@ -40,9 +40,6 @@
     <Filter Include="Game\Monster\Boss">
       <UniqueIdentifier>{7c0f69f5-1f34-4fa6-b934-f4448906a581}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\Monster\General">
-      <UniqueIdentifier>{95a649a4-f55d-43c3-a673-835f8d43ceaa}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Game\BackGround">
       <UniqueIdentifier>{99e7dc12-ec56-4b1d-8c55-a07d1f3651a5}</UniqueIdentifier>
     </Filter>
@@ -97,6 +94,12 @@
     <ClCompile Include="Input.cpp">
       <Filter>FrameWork\Input</Filter>
     </ClCompile>
+    <ClCompile Include="TestBoss.cpp">
+      <Filter>Game\Monster\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="TestScene.cpp">
+      <Filter>Game\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -146,6 +149,12 @@
     </ClInclude>
     <ClInclude Include="Input.h">
       <Filter>FrameWork\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="TestBoss.h">
+      <Filter>Game\Monster\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="TestScene.h">
+      <Filter>Game\Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

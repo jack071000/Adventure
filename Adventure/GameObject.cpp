@@ -2,7 +2,7 @@
 #include "GameObject.h"
 
 
-GameObject::GameObject() : Parent(nullptr) , Rotation(0.f) , visible(1) , UseParentMatrix(1) , Position(0.f,0.f) , Scale(1.f,1.f)
+GameObject::GameObject() : Parent(nullptr) , Rotation(0.f) , visible(1) , UseParentMatrix(1) , Position(0.f,0.f) , Scale(1.f,1.f) , ScaleCenter(0.f,0.f)
 {
 }
 
@@ -24,7 +24,7 @@ void GameObject::Update(float deltaTime)
 {
 	if (visible == false) return;
 
-	D3DXMatrixTransformation2D(&Matrix, NULL, 0.0f, &Scale, NULL, Rotation, &Position);
+	D3DXMatrixTransformation2D(&Matrix, &ScaleCenter, 0.0f, &Scale, NULL, Rotation, &Position);
 
 	if (Parent)
 	{
@@ -35,6 +35,8 @@ void GameObject::Update(float deltaTime)
 	for (auto child : Children)
 		child->Update(deltaTime);
 
+
+
 }
 
 void GameObject::Render()
@@ -44,7 +46,6 @@ void GameObject::Render()
 	//
 	for (auto child : Children)
 		child->Render();
-
 }
 
 void GameObject::AddChild(GameObject * child)

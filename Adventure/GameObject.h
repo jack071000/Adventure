@@ -12,10 +12,10 @@ public:
 	D3DXMATRIX Matrix;
 	D3DXVECTOR2 Scale;
 
+	D3DXVECTOR2 ScaleCenter;
+
 	bool visible;
 	bool UseParentMatrix;
-
-
 
 public:
 	GameObject();

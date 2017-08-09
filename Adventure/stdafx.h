@@ -16,6 +16,15 @@
 #define SAFE_DELETE(x) if(x) {delete x; x = nullptr;}
 #define SAFE_RELEASE(x) if(x) {x->Release(); x = nullptr;}
 
+inline bool IsInWindow(float x, float y)
+{
+	if (x > 0.f && x < 1280.f && y > 0 && y < 720.f)
+		return true;
+	else
+		return false;
+}
+
+
 #include <Windows.h>
 #include <stdio.h>
 #include <math.h>

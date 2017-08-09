@@ -2,7 +2,7 @@
 #include "Sprite.h"
 
 
-Sprite::Sprite() : Setrect(false)
+Sprite::Sprite() : Setrect(false) , IsFlipX(0)
 {
 }
 
@@ -24,8 +24,11 @@ bool Sprite::Init(std::wstring fileName)
 		return false;
 	}
 
-	D3DXVECTOR3 center(Texture->Size.x / 2, Texture->Size.y / 2, 0.f);
+	D3DXVECTOR2 center(Texture->Size.x / 2, Texture->Size.y / 2);
 	this->Center = center;
+
+	this->Position.x += Center.x;
+	this->Position.y += Center.y;
 
 	return true;
 }
@@ -39,6 +42,8 @@ void Sprite::Update(float deltaTime)
 {
 	if (!visible)
 		return;
+
+	
 
 	GameObject::Update(deltaTime);
 }
@@ -59,8 +64,21 @@ void Sprite::Render()
 
 	D3DSprite->Begin(D3DXSPRITE_ALPHABLEND);
 	D3DSprite->SetTransform(&Matrix);
-	D3DSprite->Draw(Texture->D3DTexture, &m_Rect, NULL, NULL, D3DCOLOR_ARGB(255, 255, 255, 255));
+	D3DSprite->Draw(Texture->D3DTexture, &m_Rect, &D3DXVECTOR3(Center.x, Center.y, 0.f), NULL, D3DCOLOR_ARGB(255, 255, 255, 255));
 	D3DSprite->End();
+}
+
+void Sprite::FlipX()
+{
+	if (IsFlipX == true)
+		return;
+
+	ScaleCenter = this->Center;
+	Scale.x *= -1.0f;
+	
+	printf("Center x : %f \ny : %f ", ScaleCenter.x, ScaleCenter.y);
+
+	IsFlipX = true;
 }
 
 Sprite * Sprite::Create(std::wstring filename)

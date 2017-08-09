@@ -6,6 +6,9 @@ private:
 	Sprite* StartSceneBackGround;
 	Player* player;
 
+	Sprite* bok;
+
+
 public:
 	StartScene();
 	~StartScene();
@@ -13,4 +16,8 @@ public:
 	bool Init();
 	void Update(float deltaTime);
 	void Render();
+
+	static D3DXMATRIX CameraMatrix;
+	static float CameraX;
+	static float CameraY;
 };

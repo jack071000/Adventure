@@ -2,7 +2,7 @@
 class Player : public GameObject
 {
 private:
-	//static Player* m_instance;
+	static Player* m_instance;
 
 	int HP;
 	int Attack;

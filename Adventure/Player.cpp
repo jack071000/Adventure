@@ -1,6 +1,14 @@
 #include "stdafx.h"
 #include "Player.h"
 
+enum class ZeldatState
+{
+	Not=1,
+	ATTACK
+};
+
+auto state = ZeldatState::Not;
+
 /*
 Player * Player::GetInstance()
 {
@@ -35,11 +43,13 @@ bool Player::Init()
 	zelda->Setrect = true;
 
 	Position.x += 500;
-	Position.y += 300;
+	Position.y += 410;
 
 	RECT rect;
 	SetRect(&rect, 0, 0, 100, 120);
 	zelda->m_Rect = rect;
+
+
 
 	this->value = 0;
 	AddChild(zelda);
@@ -50,17 +60,22 @@ void Player::Update(float deltaTime)
 {
 	GameObject::Update(deltaTime);
 
-	if (Singleton<Input>::GetInstance()->GetKeyState(VK_SPACE) == KeyState::KEY_PRESS)
+	if (Input::GetInstance()->GetKeyState(VK_SPACE) == KeyState::KEY_UP)
 	{
-		if (GameTime::TotalFrame % 3 == 0)
-		{
+		state = ZeldatState::ATTACK;
+	}
+
+	if (GameTime::TotalFrame % 3 == 0)
+	{
+		if (state == ZeldatState::ATTACK)
 			value += 115;
 
-			if (value > 575)
-				value = 0;
+		if (value > 575)
+		{
+			value = 0;
+			state = ZeldatState::Not;
 		}
 	}
-	
 	RECT rect;
 	SetRect(&rect, value, 0, value+100, 120);
 
@@ -74,7 +89,7 @@ void Player::Update(float deltaTime)
 		Position.x -= 3.f;
 	}
 
-	printf("VALUE : %d", value);
+	//printf("VALUE : %d", value);
 
 	zelda->m_Rect = rect;
 }

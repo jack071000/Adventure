@@ -5,11 +5,13 @@ public:
 	LPD3DXSPRITE D3DSprite;
 	Texture* Texture;
 
-	D3DXVECTOR3 Center;
+	D3DXVECTOR2 Center;
 
 	RECT m_Rect;
 
 	bool Setrect;
+
+	bool IsFlipX;
 
 public:
 	Sprite();
@@ -23,6 +25,10 @@ public:
 
 	virtual void Render();
 
+	void FlipX();
+
 	static Sprite* Create(std::wstring filename);
+
+
 };
 
