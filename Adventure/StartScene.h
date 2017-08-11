@@ -1,5 +1,6 @@
 #pragma once
 class Player;
+class SwordAoura;
 class StartScene : public Scene
 {
 private:
@@ -7,6 +8,7 @@ private:
 	Player* player;
 
 	Sprite* bok;
+	SwordAoura* Aoura;
 
 
 public:

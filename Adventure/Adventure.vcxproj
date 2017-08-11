@@ -37,6 +37,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="SwordAoura.cpp" />
     <ClCompile Include="TestBoss.cpp" />
     <ClCompile Include="TestScene.cpp" />
     <ClCompile Include="Texture.cpp" />
@@ -57,6 +58,7 @@
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="StartScene.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="SwordAoura.h" />
     <ClInclude Include="TestBoss.h" />
     <ClInclude Include="TestScene.h" />
     <ClInclude Include="Texture.h" />

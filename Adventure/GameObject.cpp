@@ -32,6 +32,13 @@ void GameObject::Update(float deltaTime)
 			Matrix *= Parent->Matrix;
 	}
 	//
+	while (!Garbage.empty())
+	{
+		RemoveChild(Garbage.front(), true);
+		Garbage.pop();
+	}
+
+
 	for (auto child : Children)
 		child->Update(deltaTime);
 

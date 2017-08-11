@@ -4,7 +4,8 @@ class GameObject
 public:
 	GameObject* Parent;
 	std::vector<GameObject*> Children;
-	
+	std::queue<GameObject*> Garbage;
+
 	std::string Name;
 	float Rotation;
 
@@ -25,11 +26,20 @@ public:
 	virtual void Release();
 	virtual void Update(float deltaTime);
 	virtual void Render();
+	virtual void Destroy()
+	{
+		if (Parent)
+			Parent->Garbage.push(this);
+	}
+
 
 public:
 	void AddChild(GameObject* child);
 	void RemoveChild(GameObject * child, bool memoryDelete);
-
+	void SetVisible(bool visible)
+	{
+		this->visible = visible;
+	}
 
 };
 

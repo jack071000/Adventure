@@ -1,13 +1,14 @@
 #include "stdafx.h"
 #include "Player.h"
+#include"SwordAoura.h"
 
 enum class ZeldatState
 {
-	Not=1,
-	ATTACK
+	Stand=1,
+	ATTACK,
 };
 
-auto state = ZeldatState::Not;
+auto state = ZeldatState::Stand;
 
 /*
 Player * Player::GetInstance()
@@ -37,22 +38,32 @@ Player::~Player()
 {
 }
 
+bool plus = 1;
+
 bool Player::Init()
 {
-	zelda = Sprite::Create(L"Resources/Zelda.png");
-	zelda->Setrect = true;
+	zeldaAttack = Sprite::Create(L"Resources/ZeldaAttack.png");
+	zeldaAttack->Setrect = true;
 
+	zeldaStand = Sprite::Create(L"Resources/ZeldaStand.png");
+	zeldaStand->Setrect = true;
+	//
 	Position.x += 500;
 	Position.y += 410;
-
+	//
 	RECT rect;
-	SetRect(&rect, 0, 0, 100, 120);
-	zelda->m_Rect = rect;
-
-
+	SetRect(&rect, 0, 0, 100, 119);
+	zeldaAttack->m_Rect = rect;
+	zeldaStand->m_Rect = rect;
+	//
+	state = ZeldatState::Stand;
 
 	this->value = 0;
-	AddChild(zelda);
+	AttackTurm = 0;
+
+	AddChild(zeldaAttack);
+	AddChild(zeldaStand);
+
 	return true;
 }
 
@@ -60,41 +71,77 @@ void Player::Update(float deltaTime)
 {
 	GameObject::Update(deltaTime);
 
-	if (Input::GetInstance()->GetKeyState(VK_SPACE) == KeyState::KEY_UP)
+	if (state == ZeldatState::ATTACK)
 	{
-		state = ZeldatState::ATTACK;
-	}
+		zeldaAttack->SetVisible(1);
+		zeldaStand->SetVisible(0);
 
-	if (GameTime::TotalFrame % 3 == 0)
-	{
-		if (state == ZeldatState::ATTACK)
-			value += 115;
+		if (GameTime::TotalFrame % 6 == 0)
+			value += 113;
 
-		if (value > 575)
+		if (value > 325)
 		{
 			value = 0;
-			state = ZeldatState::Not;
+			state = ZeldatState::Stand;
 		}
-	}
-	RECT rect;
-	SetRect(&rect, value, 0, value+100, 120);
 
-	if (Singleton<Input>::GetInstance()->GetKeyState(VK_RIGHT) == KeyState::KEY_PRESS)
+		RECT rect;
+		SetRect(&rect, value, 0, value+113, 119);
+		zeldaAttack->m_Rect = rect;
+	}
+		//
+		
+	if (Input::GetInstance()->GetKeyState(VK_SPACE) == KeyState::KEY_UP & AttackTurm <= 0)
 	{
-		Position.x += 3.f;
+		AttackTurm = 30;
+
+		value = 0;
+		auto aoura = new SwordAoura();
+		aoura->Init();
+		aoura->Position = { -150,-20 };
+
+		AddChild(aoura);
+		state = ZeldatState::ATTACK;
+
 	}
 
-	if (Singleton<Input>::GetInstance()->GetKeyState(VK_LEFT) == KeyState::KEY_PRESS)
+	if (state == ZeldatState::Stand)
 	{
-		Position.x -= 3.f;
+		zeldaStand->SetVisible(1);
+		zeldaAttack->SetVisible(0);
+		if (GameTime::TotalFrame % 60 == 0)
+			value += 113;
+
+		if (value > 216)
+			value = 0;
+
+		RECT rect;
+		SetRect(&rect, value, 0, value+100, 120);
+
+		zeldaStand->m_Rect = rect;
 	}
+	
 
-	//printf("VALUE : %d", value);
+	Moving();
 
-	zelda->m_Rect = rect;
+	printf("VALUE : %d\n", value);
+
+	printf("P.x : %d \n", Position.x);
+
+	AttackTurm--;
+
 }
 
 void Player::Render()
 {
 	GameObject::Render();
+}
+
+void Player::Moving()
+{
+	if (Singleton<Input>::GetInstance()->GetKeyState(VK_RIGHT) == KeyState::KEY_PRESS)
+		Position.x += 3.f;
+
+	if (Singleton<Input>::GetInstance()->GetKeyState(VK_LEFT) == KeyState::KEY_PRESS)
+		Position.x -= 3.f;
 }
