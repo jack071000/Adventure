@@ -1,4 +1,11 @@
 #pragma once
+enum class Tag
+{
+	Player = 0,
+	Enemy
+};
+
+
 class GameObject
 {
 public:
@@ -8,6 +15,8 @@ public:
 
 	std::string Name;
 	float Rotation;
+
+	Tag m_Tag;
 
 	D3DXVECTOR2 Position;
 	D3DXMATRIX Matrix;
