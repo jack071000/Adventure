@@ -22,18 +22,16 @@ bool StartScene::Init()
 	player = new Player();
 	player->Init();
 
-	
-
 	bok = Sprite::Create(L"Resources/Monster.png");
 	bok->Position = { 300, 310 };
 	
 	printf("bok : %f , bok : %f", bok->Center.x, bok->Center.y);
 
-	auto map = Sprite::Create(L"Resources/Map.png");
+	auto map = Sprite::Create(L"Resources/background.png");
 	
 	AddChild(map);
 	AddChild(player);
-	AddChild(bok);
+	//AddChild(bok);
 	
 
 	return true;

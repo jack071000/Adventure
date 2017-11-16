@@ -103,7 +103,9 @@
     <ClCompile Include="SwordAoura.cpp">
       <Filter>Game\Player</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -163,6 +165,8 @@
     <ClInclude Include="SwordAoura.h">
       <Filter>Game\Player</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Enemy.h">
+      <Filter>Game</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

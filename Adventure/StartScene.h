@@ -10,7 +10,6 @@ private:
 	Sprite* bok;
 	SwordAoura* Aoura;
 
-
 public:
 	StartScene();
 	~StartScene();

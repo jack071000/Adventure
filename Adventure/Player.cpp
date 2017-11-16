@@ -49,7 +49,7 @@ bool Player::Init()
 	zeldaStand->Setrect = true;
 	//
 	Position.x += 500;
-	Position.y += 410;
+	Position.y += 510;
 	//
 	RECT rect;
 	SetRect(&rect, 0, 0, 100, 119);
